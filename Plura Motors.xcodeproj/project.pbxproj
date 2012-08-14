@@ -1,0 +1,330 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CE10823B15D9FAC400800045 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE10823A15D9FAC400800045 /* UIKit.framework */; };
+		CE10823D15D9FAC400800045 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE10823C15D9FAC400800045 /* Foundation.framework */; };
+		CE10823F15D9FAC400800045 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE10823E15D9FAC400800045 /* CoreGraphics.framework */; };
+		CE10824515D9FAC400800045 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE10824315D9FAC400800045 /* InfoPlist.strings */; };
+		CE10824715D9FAC400800045 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE10824615D9FAC400800045 /* main.m */; };
+		CE10824B15D9FAC400800045 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE10824A15D9FAC400800045 /* AppDelegate.m */; };
+		CE10824E15D9FAC400800045 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE10824D15D9FAC400800045 /* MasterViewController.m */; };
+		CE10825115D9FAC400800045 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE10825015D9FAC400800045 /* DetailViewController.m */; };
+		CE10825415D9FAC400800045 /* MasterViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE10825215D9FAC400800045 /* MasterViewController_iPhone.xib */; };
+		CE10825715D9FAC400800045 /* MasterViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE10825515D9FAC400800045 /* MasterViewController_iPad.xib */; };
+		CE10825A15D9FAC400800045 /* DetailViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE10825815D9FAC400800045 /* DetailViewController_iPhone.xib */; };
+		CE10825D15D9FAC400800045 /* DetailViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE10825B15D9FAC400800045 /* DetailViewController_iPad.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CE10823615D9FAC400800045 /* Plura Motors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Plura Motors.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE10823A15D9FAC400800045 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		CE10823C15D9FAC400800045 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CE10823E15D9FAC400800045 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		CE10824215D9FAC400800045 /* Plura Motors-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Plura Motors-Info.plist"; sourceTree = "<group>"; };
+		CE10824415D9FAC400800045 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CE10824615D9FAC400800045 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CE10824815D9FAC400800045 /* Plura Motors-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Plura Motors-Prefix.pch"; sourceTree = "<group>"; };
+		CE10824915D9FAC400800045 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		CE10824A15D9FAC400800045 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CE10824C15D9FAC400800045 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		CE10824D15D9FAC400800045 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		CE10824F15D9FAC400800045 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		CE10825015D9FAC400800045 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		CE10825315D9FAC400800045 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MasterViewController_iPhone.xib; sourceTree = "<group>"; };
+		CE10825615D9FAC400800045 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MasterViewController_iPad.xib; sourceTree = "<group>"; };
+		CE10825915D9FAC400800045 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailViewController_iPhone.xib; sourceTree = "<group>"; };
+		CE10825C15D9FAC400800045 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailViewController_iPad.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CE10823315D9FAC400800045 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE10823B15D9FAC400800045 /* UIKit.framework in Frameworks */,
+				CE10823D15D9FAC400800045 /* Foundation.framework in Frameworks */,
+				CE10823F15D9FAC400800045 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CE10822B15D9FAC400800045 = {
+			isa = PBXGroup;
+			children = (
+				CE10824015D9FAC400800045 /* Plura Motors */,
+				CE10823915D9FAC400800045 /* Frameworks */,
+				CE10823715D9FAC400800045 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CE10823715D9FAC400800045 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CE10823615D9FAC400800045 /* Plura Motors.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CE10823915D9FAC400800045 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE10823A15D9FAC400800045 /* UIKit.framework */,
+				CE10823C15D9FAC400800045 /* Foundation.framework */,
+				CE10823E15D9FAC400800045 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CE10824015D9FAC400800045 /* Plura Motors */ = {
+			isa = PBXGroup;
+			children = (
+				CE10824915D9FAC400800045 /* AppDelegate.h */,
+				CE10824A15D9FAC400800045 /* AppDelegate.m */,
+				CE10824C15D9FAC400800045 /* MasterViewController.h */,
+				CE10824D15D9FAC400800045 /* MasterViewController.m */,
+				CE10824F15D9FAC400800045 /* DetailViewController.h */,
+				CE10825015D9FAC400800045 /* DetailViewController.m */,
+				CE10825215D9FAC400800045 /* MasterViewController_iPhone.xib */,
+				CE10825515D9FAC400800045 /* MasterViewController_iPad.xib */,
+				CE10825815D9FAC400800045 /* DetailViewController_iPhone.xib */,
+				CE10825B15D9FAC400800045 /* DetailViewController_iPad.xib */,
+				CE10824115D9FAC400800045 /* Supporting Files */,
+			);
+			path = "Plura Motors";
+			sourceTree = "<group>";
+		};
+		CE10824115D9FAC400800045 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CE10824215D9FAC400800045 /* Plura Motors-Info.plist */,
+				CE10824315D9FAC400800045 /* InfoPlist.strings */,
+				CE10824615D9FAC400800045 /* main.m */,
+				CE10824815D9FAC400800045 /* Plura Motors-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CE10823515D9FAC400800045 /* Plura Motors */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE10826015D9FAC400800045 /* Build configuration list for PBXNativeTarget "Plura Motors" */;
+			buildPhases = (
+				CE10823215D9FAC400800045 /* Sources */,
+				CE10823315D9FAC400800045 /* Frameworks */,
+				CE10823415D9FAC400800045 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Plura Motors";
+			productName = "Plura Motors";
+			productReference = CE10823615D9FAC400800045 /* Plura Motors.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CE10822D15D9FAC400800045 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "Jaime Gamez";
+			};
+			buildConfigurationList = CE10823015D9FAC400800045 /* Build configuration list for PBXProject "Plura Motors" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CE10822B15D9FAC400800045;
+			productRefGroup = CE10823715D9FAC400800045 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CE10823515D9FAC400800045 /* Plura Motors */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CE10823415D9FAC400800045 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE10824515D9FAC400800045 /* InfoPlist.strings in Resources */,
+				CE10825415D9FAC400800045 /* MasterViewController_iPhone.xib in Resources */,
+				CE10825715D9FAC400800045 /* MasterViewController_iPad.xib in Resources */,
+				CE10825A15D9FAC400800045 /* DetailViewController_iPhone.xib in Resources */,
+				CE10825D15D9FAC400800045 /* DetailViewController_iPad.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CE10823215D9FAC400800045 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE10824715D9FAC400800045 /* main.m in Sources */,
+				CE10824B15D9FAC400800045 /* AppDelegate.m in Sources */,
+				CE10824E15D9FAC400800045 /* MasterViewController.m in Sources */,
+				CE10825115D9FAC400800045 /* DetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CE10824315D9FAC400800045 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE10824415D9FAC400800045 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		CE10825215D9FAC400800045 /* MasterViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE10825315D9FAC400800045 /* en */,
+			);
+			name = MasterViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		CE10825515D9FAC400800045 /* MasterViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE10825615D9FAC400800045 /* en */,
+			);
+			name = MasterViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+		CE10825815D9FAC400800045 /* DetailViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE10825915D9FAC400800045 /* en */,
+			);
+			name = DetailViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		CE10825B15D9FAC400800045 /* DetailViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE10825C15D9FAC400800045 /* en */,
+			);
+			name = DetailViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CE10825E15D9FAC400800045 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CE10825F15D9FAC400800045 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CE10826115D9FAC400800045 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Plura Motors/Plura Motors-Prefix.pch";
+				INFOPLIST_FILE = "Plura Motors/Plura Motors-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		CE10826215D9FAC400800045 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Plura Motors/Plura Motors-Prefix.pch";
+				INFOPLIST_FILE = "Plura Motors/Plura Motors-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CE10823015D9FAC400800045 /* Build configuration list for PBXProject "Plura Motors" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE10825E15D9FAC400800045 /* Debug */,
+				CE10825F15D9FAC400800045 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE10826015D9FAC400800045 /* Build configuration list for PBXNativeTarget "Plura Motors" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE10826115D9FAC400800045 /* Debug */,
+				CE10826215D9FAC400800045 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CE10822D15D9FAC400800045 /* Project object */;
+}
