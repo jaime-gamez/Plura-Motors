@@ -16,4 +16,5 @@
 
 @property (strong, nonatomic) UISplitViewController *splitViewController;
 
+@property (nonatomic,strong) NSMutableArray *tableData; //holds the table data
 @end

@@ -10,6 +10,8 @@
 
 #import "DetailViewController.h"
 
+#import "AppDelegate.h"
+
 @interface MasterViewController () {
     NSMutableArray *_objects;
 }
@@ -34,10 +36,14 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    //self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
+    //UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
+    //self.navigationItem.rightBarButtonItem = addButton;
+    
+    self.title = @"Inventario";
+    AppDelegate *delegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    tableData = delegate.tableData;
 }
 
 - (void)viewDidUnload
@@ -74,7 +80,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _objects.count;
+    return [tableData count];
 }
 
 // Customize the appearance of table view cells.
@@ -84,15 +90,43 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
         if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         }
     }
 
 
-    NSDate *object = [_objects objectAtIndex:indexPath.row];
-    cell.textLabel.text = [object description];
+    //NSDate *object = [_objects objectAtIndex:indexPath.row];
+    //cell.textLabel.text = [object description];
+    NSDictionary *coche = [tableData objectAtIndex: indexPath.row];
+    NSMutableString *cocheName = [NSMutableString stringWithString:[coche objectForKey:@"marca"]];
+    [cocheName appendString:@" "];
+    [cocheName appendString:[coche objectForKey:@"modelo"]];
+    [cocheName appendString:@" "];
+    [cocheName appendString:[coche objectForKey:@"version"]] ;
+    cell.textLabel.text = cocheName;
+    
+    NSArray *images = [coche objectForKey:@"_fotos"];
+    NSMutableString *urlImage = [NSMutableString stringWithString:@"http://pluramotorsdemo.appspot.com/img/"];
+    //[images objectAtIndex:0];
+    [urlImage appendFormat:@"%@.png",[images objectAtIndex:0]];
+    //[urlImage appendString:@".png"];
+    
+    NSURL *url = [NSURL URLWithString:urlImage];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    UIImage *img = [[UIImage alloc] initWithData:data];
+    cell.imageView.image = img;
+    
+    //NSLog(@"\nFOTOS: %@ \n ", urlImage);
+    NSMutableString *cocheDetails = [NSMutableString stringWithFormat:@"$%@ (%@ - %@kms)",[coche objectForKey:@"precio"],[coche objectForKey:@"anio"], [coche objectForKey:@"kms"]];
+    //[cocheDetails appendFormat:@"$%@ (%@ - %@)", ];
+    
+    cell.detailTextLabel.textColor = [UIColor redColor];
+    cell.detailTextLabel.text = cocheDetails;
+    
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
     return cell;
 }
 
@@ -130,15 +164,16 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSDate *object = [_objects objectAtIndex:indexPath.row];
+    //NSDate *object = [_objects objectAtIndex:indexPath.row];
+    NSDictionary *coche = [tableData objectAtIndex: indexPath.row];
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
 	    if (!self.detailViewController) {
 	        self.detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController_iPhone" bundle:nil];
 	    }
-	    self.detailViewController.detailItem = object;
+	    self.detailViewController.detailItem = coche;
         [self.navigationController pushViewController:self.detailViewController animated:YES];
     } else {
-        self.detailViewController.detailItem = object;
+        self.detailViewController.detailItem = coche;
     }
 }
 

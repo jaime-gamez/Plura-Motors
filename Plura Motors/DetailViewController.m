@@ -16,6 +16,10 @@
 @implementation DetailViewController
 
 #pragma mark - Managing the detail item
+@synthesize detail2Label = _detail2Label;
+@synthesize price = _price;
+@synthesize photo = _photo;
+@synthesize photo2 = _photo2;
 
 - (void)setDetailItem:(id)newDetailItem
 {
@@ -36,7 +40,43 @@
     // Update the user interface for the detail item.
 
     if (self.detailItem) {
-        self.detailDescriptionLabel.text = [self.detailItem description];
+        
+        //self.detailDescriptionLabel.text = [self.detailItem description];
+        NSMutableString *cocheName = [NSMutableString stringWithString:[self.detailItem objectForKey:@"marca"]];
+        [cocheName appendString:@" "];
+        [cocheName appendString:[self.detailItem objectForKey:@"modelo"]];
+        [cocheName appendString:@" "];
+        [cocheName appendString:[self.detailItem objectForKey:@"version"]] ;
+        self.detailDescriptionLabel.text = cocheName;
+        
+        NSMutableString *cochePrice = [NSMutableString stringWithFormat:@"$%@",[self.detailItem objectForKey:@"precio"]];
+        self.price.text = cochePrice;
+        
+        NSArray *images = [self.detailItem objectForKey:@"_fotos"];
+        NSMutableString *urlImage = [NSMutableString stringWithString:@"http://pluramotorsdemo.appspot.com/img/"];
+        //[images objectAtIndex:0];
+        [urlImage appendFormat:@"%@.png",[images objectAtIndex:0]];
+        
+        NSURL *url = [NSURL URLWithString:urlImage];
+        NSData *data = [NSData dataWithContentsOfURL:url];
+        UIImage *img = [[UIImage alloc] initWithData:data];
+        self.photo.image = img;
+        
+        
+        NSMutableString *urlImage2 = [NSMutableString stringWithString:@"http://pluramotorsdemo.appspot.com/img/"];
+        //[images objectAtIndex:0];
+        [urlImage2 appendFormat:@"%@.png",[images objectAtIndex:1]];
+        
+        NSURL *url2 = [NSURL URLWithString:urlImage2];
+        NSData *data2 = [NSData dataWithContentsOfURL:url2];
+        UIImage *img2 = [[UIImage alloc] initWithData:data2];
+        self.photo2.image = img2;
+
+        
+        //NSLog(@"\nFOTOS: %@ \n ", urlImage);
+        NSMutableString *cocheDetails = [NSMutableString stringWithFormat:@"%@ - %@kms",[self.detailItem objectForKey:@"anio"], [self.detailItem objectForKey:@"kms"]];
+        self.detail2Label.text = cocheDetails;
+        
     }
 }
 
@@ -49,6 +89,10 @@
 
 - (void)viewDidUnload
 {
+    [self setPrice:nil];
+    [self setPhoto:nil];
+    [self setPhoto2:nil];
+    [self setDetail2Label:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }

@@ -13,11 +13,33 @@
 #import "DetailViewController.h"
 
 @implementation AppDelegate
+@synthesize tableData;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
+    NSError *error = nil;
+    NSURL *url = [NSURL URLWithString:@"http://pluramotorsdemo.appspot.com/inventario/list"];
+    NSString *json = [NSString stringWithContentsOfURL:url
+                                              encoding:NSASCIIStringEncoding
+                                                 error:&error];
+    //NSLog(@"\nJSON: %@ \n Error: %@", json, error);
+    
+    
+    if(!error) {
+        NSData *jsonData = [json dataUsingEncoding:NSUTF8StringEncoding];
+        tableData = [NSJSONSerialization JSONObjectWithData:jsonData
+                                                    options:kNilOptions
+                                                      error:&error];
+        
+        
+        //NSLog(@"\nJSON: %@ \n Error: %@", tableData, error);
+        //NSDictionary *coche = [jsonDict objectAtIndex:[ jsonDict count] - 1];
+        //NSLog(@"Total de Coches: %@", coche);
+    }
+    
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         MasterViewController *masterViewController = [[MasterViewController alloc] initWithNibName:@"MasterViewController_iPhone" bundle:nil];
         self.navigationController = [[UINavigationController alloc] initWithRootViewController:masterViewController];
@@ -66,6 +88,7 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    self.tableData = nil;
 }
 
 @end
